@@ -21,8 +21,8 @@
   ],
   "type": "module",
   "author": "",
-  "license": "ISC",
-  "description": "",
+  "license": "MIT",
+  "description": "star war names, first package for testing...",
   "dependencies": {
     "unique-random-array": "^4.0.0"
   }
