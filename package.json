@@ -1,0 +1,29 @@
+{
+  "name": "create-first-package",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmad-athra/create-first-package.git"
+  },
+  "readme": "",
+  "bugs": {
+    "url": "https://github.com/ahmad-athra/create-first-package/issues"
+  },
+  "homepage": "https://github.com/ahmad-athra/create-first-package#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "random",
+    "star",
+    "war"
+  ],
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "unique-random-array": "^4.0.0"
+  }
+}
