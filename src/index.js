@@ -1,5 +1,7 @@
-import uniqueRandomArray from 'unique-random-array';
-import starWarsNames from './starwars-names.json' assert { type: 'json' };
-export const all = starWarsNames;
-export const random = uniqueRandomArray(starWarsNames);
+const uniqueRandomArray = require('unique-random-array');
+const starWarsNames = require('./starwars-names.json');
 
+module.exports = {
+    all: starWarsNames,
+    random: uniqueRandomArray(starWarsNames)
+}
