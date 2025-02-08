@@ -11,7 +11,7 @@ describe('Star Wars Names Module', () => {
     });
 
     test('random should return a random name from starWarsNames', () => {
-        const randomName = starWarsNamesModule.random();
+        const randomName = starWarsNamesModule.random();        
         expect(starWarsNames).toContain(randomName);
     });
 
@@ -20,4 +20,12 @@ describe('Star Wars Names Module', () => {
         const name2 = starWarsNamesModule.random();
         expect(name1).not.toBe(name2); // Might fail occasionally due to randomness
     });
+
+    test('should return an array or random items if passed a number', () => {
+        const randomItems = starWarsNamesModule.random(3);
+        expect(randomItems).toHaveLength(3);
+        randomItems.forEach(name => {
+            expect(starWarsNames).toContain(name);
+        });
+    })
 });
