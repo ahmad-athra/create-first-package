@@ -14,7 +14,8 @@
   "scripts": {
     "test": "jest",
     "semantic-release": "semantic-release",
-    "commit": "cz"
+    "commit": "cz",
+    "lint": "eslint ."
   },
   "keywords": [
     "random",
@@ -28,8 +29,11 @@
     "unique-random-array": "^1.0.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.20.0",
     "@types/jest": "^29.5.14",
     "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^9.20.0",
+    "globals": "^15.14.0",
     "jest": "^29.7.0",
     "semantic-release": "^24.2.1"
   },
