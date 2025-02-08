@@ -34,11 +34,11 @@ jobs:
             echo "GH_TOKEN is set ✅"
           fi
         env:
-          GH_PAT: ${{ secrets.GH_TOKEN }}
+          GH_PAT: ${{ secrets.GH_TOKEN || env.GH_TOKEN }}
 
       - name: Run Semantic Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # GitHub token for publishing releases
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN || env.GH_TOKEN }}  # GitHub token for publishing releases
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}  # NPM token (if publishing a package)
         run: npx semantic-release  # Run Semantic Release
 
