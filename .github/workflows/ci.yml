@@ -1,0 +1,30 @@
+name: CI Pipeline # The name of the workflow
+
+on: # Defines when the workflow should run
+  push:
+    branches:
+      - main  # Run the workflow when code is pushed to the main branch
+  pull_request:  # Run the workflow when a pull request is created or updated
+
+jobs:
+  build:  # Define a job named "build"
+    runs-on: ubuntu-latest  # Use the latest Ubuntu environment
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # This step pulls the code from GitHub
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4  # Set up Node.js
+        with:
+          node-version: 18  # Use Node.js version 18
+          cache: npm  # Cache npm dependencies to speed up builds
+
+      - name: Install dependencies
+        run: npm install  # Install project dependencies
+
+      - name: Run Linting
+        run: npm run lint  # Check for code style issues
+
+      - name: Run Tests
+        run: npm test  # Run unit tests
