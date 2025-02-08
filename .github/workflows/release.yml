@@ -25,6 +25,17 @@ jobs:
       - name: Install dependencies
         run: npm install  # Install all project dependencies
 
+      - name: Check if GH_PAT is available
+        run: |
+          if [ -z "$GH_PAT" ]; then
+            echo "GH_PAT is NOT set"
+            exit 1
+          else
+            echo "GH_PAT is set ✅"
+          fi
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+
       - name: Run Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # GitHub token for publishing releases
