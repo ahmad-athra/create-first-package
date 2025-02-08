@@ -25,20 +25,20 @@ jobs:
       - name: Install dependencies
         run: npm install  # Install all project dependencies
 
-      - name: Check if GH_TOKEN is available
+      - name: Check if XXX is available
         run: |
-          if [ -z "$GH_TOKEN" ]; then
-            echo "GH_TOKEN is NOT set"
+          if [ -z "$XXX" ]; then
+            echo "XXX is NOT set"
             exit 1
           else
-            echo "GH_TOKEN is set ✅"
+            echo "XXX is set ✅"
           fi
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN}}
+          XXX: ${{ secrets.XXX}}
 
       - name: Run Semantic Release
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN}}  # GitHub token for publishing releases
+          GITHUB_TOKEN: ${{ secrets.XXX}}  # GitHub token for publishing releases
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}  # NPM token (if publishing a package)
         run: npx semantic-release  # Run Semantic Release
 
