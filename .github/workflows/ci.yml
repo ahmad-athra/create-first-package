@@ -17,7 +17,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4  # Set up Node.js
         with:
-          node-version: 18  # Use Node.js version 18
+          node-version: lts/*  # Use Node.js version lts
           cache: npm  # Cache npm dependencies to speed up builds
 
       - name: Install dependencies
